@@ -288,10 +288,10 @@ customer-analytics-platform/
 ## 📞 Connect
 
 **Sai Mudragada**  
-📧 saimudragada@example.com  
+📧 saimudragada1@gmail.com  
 💼 [LinkedIn](https://linkedin.com/in/saimudragada)  
 💻 [GitHub](https://github.com/saimudragada)  
-📊 [Portfolio](https://your-portfolio.com)
+📊 [Portfolio](https://saimudragadaportfolio.vercel.app/)
 
 ---
 
