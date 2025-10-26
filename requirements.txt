@@ -28,4 +28,10 @@ openpyxl==3.1.2
 
 # Jupyter for exploration
 jupyter==1.0.0
-ipykernel==6.27.1
+ipykernel==6.27.1langchain==0.3.27
+langchain-community==0.3.27
+langchain-core==0.3.79
+langchain-experimental==0.3.4
+langchain-openai==0.3.35
+langchain-text-splitters==0.3.9
+openai==2.6.1
