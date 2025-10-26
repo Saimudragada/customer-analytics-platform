@@ -12,7 +12,7 @@
 
 ## 📊 Business Problem
 
-**Elist Electronics**, a Brazilian e-commerce marketplace established in 2018, faces critical retention challenges:
+**Elist Electronics**, a Brazilian e-commerce marketplace established in 2015, faces critical retention challenges:
 
 - **59.2% customer churn rate** threatening long-term profitability
 - **$1.8M in at-risk revenue** from 13,186 inactive but salvageable customers  
