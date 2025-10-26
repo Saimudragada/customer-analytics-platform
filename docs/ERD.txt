@@ -1,0 +1,103 @@
+
+DATABASE STRUCTURE - ENTITY RELATIONSHIP DIAGRAM
+================================================================================
+
+📊 CORE TABLES AND RELATIONSHIPS:
+
+1. CUSTOMERS (99,441 records)
+   └─ customer_id (Primary Key)
+   └─ customer_unique_id
+   └─ customer_zip_code_prefix
+   └─ customer_city
+   └─ customer_state
+
+2. ORDERS (99,441 records) ⭐ CENTRAL TABLE
+   └─ order_id (Primary Key)
+   └─ customer_id (Foreign Key → CUSTOMERS)
+   └─ order_status
+   └─ order_purchase_timestamp
+   └─ order_approved_at
+   └─ order_delivered_carrier_date
+   └─ order_delivered_customer_date
+   └─ order_estimated_delivery_date
+
+3. ORDER_ITEMS (112,650 records)
+   └─ order_id (Foreign Key → ORDERS)
+   └─ order_item_id
+   └─ product_id (Foreign Key → PRODUCTS)
+   └─ seller_id (Foreign Key → SELLERS)
+   └─ shipping_limit_date
+   └─ price
+   └─ freight_value
+
+4. ORDER_PAYMENTS (103,886 records)
+   └─ order_id (Foreign Key → ORDERS)
+   └─ payment_sequential
+   └─ payment_type
+   └─ payment_installments
+   └─ payment_value
+
+5. ORDER_REVIEWS (99,224 records)
+   └─ review_id (Primary Key)
+   └─ order_id (Foreign Key → ORDERS)
+   └─ review_score
+   └─ review_comment_title
+   └─ review_comment_message
+   └─ review_creation_date
+   └─ review_answer_timestamp
+
+6. PRODUCTS (32,951 records)
+   └─ product_id (Primary Key)
+   └─ product_category_name (Foreign Key → CATEGORIES)
+   └─ product_name_length
+   └─ product_description_length
+   └─ product_photos_qty
+   └─ product_weight_g
+   └─ product_length_cm
+   └─ product_height_cm
+   └─ product_width_cm
+
+7. SELLERS (3,095 records)
+   └─ seller_id (Primary Key)
+   └─ seller_zip_code_prefix
+   └─ seller_city
+   └─ seller_state
+
+8. PRODUCT_CATEGORIES (71 records)
+   └─ product_category_name (Primary Key, Portuguese)
+   └─ product_category_name_english
+
+9. GEOLOCATION (1,000,163 records)
+   └─ geolocation_zip_code_prefix
+   └─ geolocation_lat
+   └─ geolocation_lng
+   └─ geolocation_city
+   └─ geolocation_state
+
+================================================================================
+RELATIONSHIP FLOW:
+
+CUSTOMERS ─(1:M)─> ORDERS ─(1:M)─> ORDER_ITEMS ─(M:1)─> PRODUCTS
+                    │                    │
+                    ├─(1:M)─> ORDER_PAYMENTS
+                    │                    │
+                    ├─(1:1)─> ORDER_REVIEWS
+                    │
+                    └─> ORDER_ITEMS ─(M:1)─> SELLERS
+
+PRODUCTS ─(M:1)─> PRODUCT_CATEGORIES
+
+CUSTOMERS/SELLERS ─> GEOLOCATION (via zip_code_prefix)
+
+================================================================================
+KEY METRICS FOR ANALYSIS:
+
+✓ Customer Lifetime Value (CLV): ORDERS → ORDER_ITEMS (price)
+✓ Churn Analysis: ORDERS (order_purchase_timestamp) by customer_id
+✓ RFM Segmentation: Recency, Frequency, Monetary from ORDERS
+✓ Product Performance: ORDER_ITEMS → PRODUCTS → CATEGORIES
+✓ Seller Performance: ORDER_ITEMS → SELLERS
+✓ Review Sentiment: ORDER_REVIEWS (review_score)
+✓ Geographic Analysis: CUSTOMERS/SELLERS → GEOLOCATION
+
+================================================================================
