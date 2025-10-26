@@ -83,7 +83,7 @@ Segmented 93,358 customers into 8 distinct behavioral groups using Recency, Freq
 
 **Critical Finding:** "At Risk" segment (12,450 customers, $2.22M revenue) represents the highest ROI opportunity—these customers have proven purchase intent and are salvageable with intervention.
 
-![RFM Segmentation](./docs/screenshots/segmentation.png)
+![RFM Segmentation](./docs/screenshots/customer_segmentation.png)
 
 ---
 
@@ -131,7 +131,7 @@ Integrated **GPT-4** for natural language business intelligence:
 
 > *"Your retention strategy should prioritize three areas: (1) Win back 13,186 at-risk customers (potential $440-660K recovery), (2) Protect top 10% generating 41% of revenue with VIP program ($266K churn prevention), (3) Reduce Recent Customer churn from 45% to 30% through engagement sequences ($227K new LTV)."*
 
-![AI Insights](./docs/screenshots/ai_insights.png)
+![AI Insights](./docs/screenshots/ai_insights_chat.png)
 
 ---
 
