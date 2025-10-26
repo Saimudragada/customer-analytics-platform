@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+
+# Data files (we'll track only small samples)
+data/raw/*.csv
+data/processed/*.csv
+*.pkl
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Model files
+models/*.pkl
+models/*.joblib
